@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Gonts  -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>YLAN Server</title>
+  </head>
+  <body class="noise">
+    <div class="doodle">
+      <div
+        class="container"
+        style="display: flex; flex-direction: column-reverse;"
+      >
+        <div class="h-layout" style="height: -webkit-fill-available">
+          <div class="logo">
+            <img src="assets/main_logo.png" alt="" />
+          </div>
+          <div class="title" style="margin: auto;">
+            <h1 style="margin: 20px 0 60px 0;">YLAN SERVER</h1>
+          </div>
+          <!-- <p>stream server started</p> -->
+        </div>
+      </div>
+      <section>
+        <div class="content">
+          <ul>
+            <li>
+              Access your computer directories remotely using our YLAN mobile
+              application.
+            </li>
+            <li>Download files from computer to your mobile device.</li>
+            <li>Upload files from your mobile device to your computer.</li>
+            <li>
+              Stream video from your computer to your phone or TV through our
+              YLAN application.
+            </li>
+          </ul>
+        </div>
+        <div class="info" style="display: flex; flex-direction: row; align-items: flex-end; margin-bottom: 2rem; margin-top: 0px;">
+          <div class="formContainer" style="display: block;margin-right: 3rem; ">
+            <form action="" style="display: flex; flex-direction: column;">
+              <label for="ip" style="margin-left: 10px;"><b> IP Address </b> </label>
+              <input
+                type="text"
+                id="ip"
+                style="text-align: center; font-size: large; width: 10rem;color: black;"
+                class="ip-input"
+                disabled
+                placeholder="IP not found"
+                autocomplete="off"
+              />
+            </form>
+          </div>
+          <div class="btns" style="display: flex;flex-direction: row;">
+            <form id="shutdownForm" action="/shutdown" method="POST">
+              <button
+                      class="btn"
+                      id="stop_server"
+                      style="margin-right: 1.5rem; height: 45px"
+              >
+                <img
+                        src="./img/routing-svgrepo-com.svg"
+                        style="width: 15px"
+                        alt=""
+                />
+                Stop Server
+              </button>
+
+            </form>
+            <div class="dwnld" style="border-radius: 20px">
+              <button type="button" class="button">
+                <img
+                  src="./assets/main_logo.png"
+                  alt=""
+                  style="margin-left: 4px"
+                />
+                <p style="margin-right: 1rem">YLAN App</p>
+                <a href="https://github.com/prem777p/YLAN_Android/releases/download/YLAN_App/YLAN.apk">
+                  <span class="button__icon"
+                    ><svg
+                      class="svg"
+                      data-name="Layer 2"
+                      id="bdd05811-e15d-428c-bb53-8661459f9307"
+                      viewBox="0 0 35 35"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"
+                      ></path>
+                      <path
+                        d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"
+                      ></path>
+                      <path
+                        d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"
+                      ></path>
+                    </svg>
+                    </span>
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+
+
+     fetch("http://localhost:8080/ip").then(res => {
+         return res.json()
+      }).then(data => {
+       document.querySelector("#ip").value = data.ip; //response here ie. data.res
+
+     })
+
+      document
+        .getElementById("stop_server")
+        .addEventListener("click", function () {
+          fetch("/shutdown", { method: "POST" })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+              alert("Application stopped successfully!");
+            })
+            .catch((error) => {
+            });
+        });
+    </script>
+  </body>
+</html>

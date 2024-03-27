@@ -1,0 +1,329 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+body {
+  box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+
+  /* color: white; */
+  overflow: hidden;
+}
+
+.noise {
+  background: rgba(27, 66, 66,0.6);
+  height: 100vh;
+  background-image: url(/assets/noise.png);
+}
+
+.container {
+  margin: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 2rem;
+    /* height: 18vh; */
+  /* height: 50vh; */
+  /* margin-bottom: 2rem; */
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+   position: relative;
+   top: 2rem;
+}
+
+.ip-input{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgba(256, 256, 256, 0.05);
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+  font-size: 1.1vw;
+  box-shadow: -1px -2px 1.4px 0.7px #323838;
+  margin: 0 5vw 0 0;
+}
+
+::placeholder{
+  color: #000;
+}
+
+.ip-input:focus{
+  border: none;
+  outline: none;
+}
+
+.ip-input:hover {
+  background-color: rgba(256, 256, 256, 0.1);
+}
+
+.stop_btn {
+  background-color: rgba(256, 256, 256, 0.05);
+  font-size: 1.1vw;
+  font-weight: 600;
+  padding: 0.7rem 1.2rem;
+  /* margin: 0.5vw; */
+  margin: 0 2vw 0 3vw;
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset -1px -2px 1.4px 0.7px #323838;
+}
+
+.stop_btn:active {
+  box-shadow: -1px -2px 1px 0.7px #323838;
+}
+
+.stop_btn:hover {
+  background-color: rgba(256, 256, 256, 0.15);
+}
+
+.download_btn {
+  background-color: rgba(256, 256, 256, 0.05);
+  font-size: 1.1vw;
+  font-weight: 600;
+  padding: 0.7rem 1.3rem;
+  /* margin: 0.5vw; */
+  /* margin: 0 1vw; */
+  border: none;
+  border-radius: 10px;
+  box-shadow: inset -1px -2px 1.4px 0.7px #323838;
+}
+
+.download_btn:active {
+  box-shadow: -1px -2px 1px 0.7px #323838;
+}
+
+.download_btn:hover {
+  background-color: rgba(256, 256, 256, 0.15);
+}
+
+section {
+  line-height: 3rem;
+  font-size: large;
+  text-align: justify;
+  background-color: rgba(256, 256, 256, 0.06);
+  border-radius: 30px;
+  width: 55%;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 2.5rem;
+  bottom: 1rem;
+  padding-top: 0px;
+  padding-left: 2px;
+  padding-right: 2px;
+  backdrop-filter: blur(7px);
+}
+
+img {
+  width: 150px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+  /* overflow: hidden; */
+  transition-duration: 0.8s;
+  transition-property: transform;
+}
+
+img:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+}
+
+.title {
+  font-size: 50px;
+  /* margin: 25px 0px; */
+  font-style: italic;
+  text-shadow: 1px 1px #152324, 2px 2px #152324, 3px 3px #152324,
+    4px 4px #152324, 5px 5px #152324, 6px 6px #152324;
+}
+
+/* .title:hover {
+    position: relative; 
+    top: -3px; 
+    left: -3px; 
+
+    text-shadow: 1px 1px #152324, 
+    2px 2px #152324, 
+    3px 3px #152324
+} */
+
+.doodle {
+  background-image: url(/assets/squiggle.png);
+  background-size: 50%;
+  background-repeat: repeat;
+  animation: animateCloud 90s linear infinite;
+  /* position: fixed; */
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  /* z-index:1000; */
+  background-position: 0 0;
+}
+
+@keyframes animateCloud {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -1280px -600px;
+  }
+}
+
+.h-layout {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  margin-top: 0;
+}
+
+ul {
+  /* list-style-type: '* '; */
+  margin: 0;
+  padding: 0;
+  font-size: 1.3vw;
+  font-style: italic;
+}
+.button img{
+  height: 50px;
+  width: auto;
+}
+.button {
+  --main-focus: #2d8cf0;
+  --font-color: #dedede;
+  --bg-color-sub: #222;
+  --bg-color: #323232;
+  --main-color: #dedede;
+  position: relative;
+  width: 170px;
+  height: 45px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  /* border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color); */
+  background-color: var(--bg-color);
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(21px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  left: 18px;
+  width: 39px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0rem;
+}
+
+.button .svg {
+  width: 20px;
+  fill: var(--main-color);
+}
+
+.button:hover {
+  background: var(--bg-color);
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}
+
+.btn {
+  --color: #9ACD32 ;
+  --color2: rgb(10, 25, 30);
+  width: 10rem;
+  background-color: transparent;
+  border-radius: 6px;
+  border: .3px solid var(--color);
+  transition: .5s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  text-transform: uppercase;
+  color: var(--color);
+ }
+ 
+ .btn::after, .btn::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: skew(90deg) translate(-50%, -50%);
+  position: absolute;
+  inset: 50%;
+  left: 25%;
+  z-index: -1;
+  transition: .5s ease-out;
+  background-color: var(--color);
+ }
+ 
+ .btn::before {
+  top: -50%;
+  left: -25%;
+  transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+ }
+ 
+ .btn:hover::before {
+  transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+ }
+ 
+ .btn:hover::after {
+  transform: skew(45deg) translate(-50%, -50%);
+ }
+ 
+ .btn:hover {
+  color: var(--color2);
+ }
+ 
+ .btn:active {
+  filter: brightness(.7);
+  transform: scale(.98);
+ }
+
+
