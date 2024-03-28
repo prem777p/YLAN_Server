@@ -27,9 +27,9 @@ To run this project, you will need to add the following environment variables to
 
 
 ## Installation
+Click to download the YLAN Server, [YALN SERVER](https://github.com/prem777p/YLAN_Server/releases/download/YLAN_Server/YLAN.SERVER.jar) .  
 Click to download the YLAN Android app, [YALN APK](https://github.com/prem777p/YLAN_Android/releases/download/YLAN_App/YLAN.apk) .
 
-Click to download the YLAN Server, [YALN SERVER](https://github.com/prem777p/YLAN_Server/releases/download/YLAN_Server/YLAN.SERVER.jar) .  
 ## Screenshots
 
 <img height="200" src="https://github.com/prem777p/YLAN_Android/assets/113753020/7740aab6-99c4-4da4-8f87-3bc019e882f5" />
